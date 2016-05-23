@@ -1,0 +1,27 @@
+{
+  "name": "web-staging-calculator",
+  "version": "1.0.0",
+  "description": "The official Home Staging Calculator from StagedHomes.com built for the web.",
+  "main": "index.js",
+  "dependencies": {
+    "normalize.css": "^4.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://duaneleem@github.com/stagedhomes/web-staging-calculator.git"
+  },
+  "keywords": [
+    "Home",
+    "Staging"
+  ],
+  "author": "Duane Leem <duaneleem@alumni.ggu.edu>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stagedhomes/web-staging-calculator/issues"
+  },
+  "homepage": "https://github.com/stagedhomes/web-staging-calculator#readme"
+}
