@@ -8,6 +8,10 @@
             $scope.userResults = factoryROSI.getUserResults();
 
             $scope.calculateROSI = function() {
+                // Do ROSI calculations here.
+
+                
+                // View Results
                 $state.go("app.results");
             }; // calculateROSI()
         }]) // controller("ctrlROSI")
