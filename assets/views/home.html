@@ -27,54 +27,60 @@
         <!-- ===================================================================================
             ROSI Calculation
         =================================================================================== -->
-        <div class="col-xs-12 col-md-6 text-center">
-            <div class="space-top-20">Avg # of months on Market for homes that are ASP Staged before Sale</div>
-            <div class="space-top-10">
-                <div class="input-group">
-                    <span class="input-group-addon">$</span>
-                    <input type="text" class="form-control" aria-label="Amount">
+        <form name="requestForm" ng-submit="calculateROSI()" novalidate>
+            <div class="col-xs-12 col-md-6 text-center">
+                <div class="space-top-20">Avg # of months on Market for homes that are ASP Staged before Sale</div>
+                <div class="space-top-10">
+                    <div class="input-group" ng-class="{ 'has-error' : requestForm.monthsBeforeASPStaged.$error.required && !requestForm.monthsBeforeASPStaged.$pristine }">
+                        <span class="input-group-addon">$</span>
+                        <input type="text" id="monthsBeforeASPStaged" class="form-control" aria-label="Amount"
+                            ng-model="userValues.monthsBeforeASPStaged"
+                            ng-value="userValues.monthsBeforeASPStaged" />
+                    </div>
                 </div>
-            </div>
 
-            <div class="space-top-20">Avg # of months on Market for homes that are Not Staged before Sale</div>
-            <div class="space-top-10">
-                <div class="input-group">
-                    <span class="input-group-addon">$</span>
-                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-                    <span class="input-group-addon">.00</span>
+                <div class="space-top-20">Avg # of months on Market for homes that are Not Staged before Sale</div>
+                <div class="space-top-10">
+                    <div class="input-group">
+                        <span class="input-group-addon">$</span>
+                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)"
+                            ng-model="userValues.monthsBeforeNotASPStaged"
+                            ng-value="userValues.monthsBeforeNotASPStaged" />
+                        <span class="input-group-addon">.00</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="space-top-20">Mortgage Amount per Month (Dollar Amount)</div>
-            <div class="space-top-10">
-                <div class="input-group">
-                    <span class="input-group-addon">$</span>
-                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-                    <span class="input-group-addon">.00</span>
+                <div class="space-top-20">Mortgage Amount per Month (Dollar Amount)</div>
+                <div class="space-top-10">
+                    <div class="input-group">
+                        <span class="input-group-addon">$</span>
+                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="3000" ng-model="userValues.mortgageAmount" ng-value="userValues.mortgageAmount" />
+                        <span class="input-group-addon">.00</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="space-top-20">Monthly Utilities, HO fees, taxes, insurance &amp; upkeep (Dollar Amount)</div>
-            <div class="space-top-10">
-                <div class="input-group">
-                    <span class="input-group-addon">$</span>
-                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-                    <span class="input-group-addon">.00</span>
+                <div class="space-top-20">Monthly Utilities, HO fees, taxes, insurance &amp; upkeep (Dollar Amount)</div>
+                <div class="space-top-10">
+                    <div class="input-group">
+                        <span class="input-group-addon">$</span>
+                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="500" ng-model="userValues.utilityAndFees" ng-value="userValues.utilityAndFees" />
+                        <span class="input-group-addon">.00</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="space-top-20">Staging Investment (Dollar Amount)</div>
-            <div class="space-top-10">
-                <div class="input-group">
-                    <span class="input-group-addon">$</span>
-                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-                    <span class="input-group-addon">.00</span>
+                <div class="space-top-20">Staging Investment (Dollar Amount)</div>
+                <div class="space-top-10">
+                    <div class="input-group">
+                        <span class="input-group-addon">$</span>
+                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="3000" ng-model="userValues.stagingInvestment" ng-value="userValues.stagingInvestment" />
+                        <span class="input-group-addon">.00</span>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Calculate Button -->
-            <div class="space-top-40 space-bottom-40"><button type="button" class="btn btn-primary">Calculate ROSI</button></div>
-        </div><!-- /col -->
+                <!-- Calculate Button -->
+                <div class="space-top-40 space-bottom-40"><button type="button" class="btn btn-primary" ng-disabled="commentForm.$invalid">Calculate ROSI</button></div>
+            </div><!-- /col -->
+        </form>
     </div>
 </section>
 <!-- /#page-wrapper -->
