@@ -31,7 +31,28 @@
             ROSI Calculation
         =================================================================================== -->
         <div class="col-xs-12 col-md-6">
+            <!-- Save as Favorite -->
+            <div class="space-top-40 text-center">
+                <form name="frmSaveAsFavorite">
+                    <div>Save this as a favorite so you can pull this ROSI information for later.</div>
+                    <div class="space-top-10"><input type="text" class="form-control" /></div>
+                    <div class="space-top-10">
+                        <button type="button" class="btn btn-primary disabled"
+                            ng-class="{ 'disabled': frmSaveAsFavorite.$invalid }"
+                            ng-disabled="frmSaveAsFavorite.$invalid"
+                            ng-click="" >Save as Favorite</button>
+                    </div>
+                </form>
+            </div>
 
+            <!-- Return Home -->
+            <div class="space-top-40 text-center">
+                <div>Return back to the main page to calculate another ROSI.</div>
+                <div class="space-top-10">
+                    <button type="button" class="btn btn-primary"
+                        ui-sref="app" >Save as Favorite</button>
+                </div>
+            </div>
         </div><!-- /col -->
     </div>
 </section>
