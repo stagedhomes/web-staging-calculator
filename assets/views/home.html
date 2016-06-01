@@ -27,7 +27,7 @@
         <!-- ===================================================================================
             ROSI Calculation
         =================================================================================== -->
-        <form name="requestForm" ng-submit="calculateROSI()" novalidate>
+        <form name="requestForm" novalidate>
             <div class="col-xs-12 col-md-6 text-center">
                 <div class="space-top-20">Avg # of months on Market for homes that are ASP Staged before Sale</div>
                 <div class="space-top-10">
@@ -97,7 +97,8 @@
                 <div class="space-top-40 space-bottom-40">
                     <button type="button" class="btn btn-primary"
                         ng-class="{ 'disabled': requestForm.$invalid }"
-                        ng-disabled="requestForm.$invalid" >Calculate ROSI</button>
+                        ng-disabled="requestForm.$invalid"
+                        ng-click="calculateROSI()" >Calculate ROSI</button>
                 </div>
             </div><!-- /col -->
         </form>
