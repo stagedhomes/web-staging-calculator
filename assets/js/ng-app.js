@@ -19,6 +19,16 @@ angular.module("appROSI", ["ui.router", "ngResource"])
                 } // views
             }) // .state
 
+            // Route: Results
+            .state("app.results", {
+                url: "results",
+                views: {
+                    "content@": {
+                        templateUrl: "assets/views/results.html",
+                    } // content
+                } // views
+            }) // state
+
             // Route: ROSI
             .state("app.rosi", {
                 url: "rosi",

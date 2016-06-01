@@ -31,39 +31,51 @@
             <div class="col-xs-12 col-md-6 text-center">
                 <div class="space-top-20">Avg # of months on Market for homes that are ASP Staged before Sale</div>
                 <div class="space-top-10">
-                    <div class="input-group" ng-class="{ 'has-error' : requestForm.monthsBeforeASPStaged.$error.required && !requestForm.monthsBeforeASPStaged.$pristine }">
+                    <div class="input-group" ng-class="{ 'has-error' : requestForm.frmMonthsBeforeASPStaged.$error.required && !requestForm.frmMonthsBeforeASPStaged.$pristine }">
                         <span class="input-group-addon">$</span>
-                        <input type="text" id="monthsBeforeASPStaged" class="form-control" aria-label="Amount"
+                        <input type="text" class="form-control" aria-label="Amount"
+                            id="frmMonthsBeforeASPStaged"
                             ng-model="userValues.monthsBeforeASPStaged"
-                            ng-value="userValues.monthsBeforeASPStaged" />
+                            ng-value="userValues.monthsBeforeASPStaged"
+                            required />
                     </div>
                 </div>
 
                 <div class="space-top-20">Avg # of months on Market for homes that are Not Staged before Sale</div>
                 <div class="space-top-10">
-                    <div class="input-group">
+                    <div class="input-group" ng-class="{ 'has-error' : requestForm.frmMonthsBeforeNotASPStaged.$error.required && !requestForm.frmMonthsBeforeNotASPStaged.$pristine }">
                         <span class="input-group-addon">$</span>
                         <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)"
+                            id="frmMonthsBeforeNotASPStaged"
                             ng-model="userValues.monthsBeforeNotASPStaged"
-                            ng-value="userValues.monthsBeforeNotASPStaged" />
+                            ng-value="userValues.monthsBeforeNotASPStaged"
+                            required />
                         <span class="input-group-addon">.00</span>
                     </div>
                 </div>
 
                 <div class="space-top-20">Mortgage Amount per Month (Dollar Amount)</div>
                 <div class="space-top-10">
-                    <div class="input-group">
+                    <div class="input-group" ng-class="{ 'has-error' : requestForm.frmMortgageAmount.$error.required && !requestForm.frmMortgageAmount.$pristine }">
                         <span class="input-group-addon">$</span>
-                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="3000" ng-model="userValues.mortgageAmount" ng-value="userValues.mortgageAmount" />
+                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="3000"
+                            id="frmMortgageAmount"
+                            ng-model="userValues.mortgageAmount"
+                            ng-value="userValues.mortgageAmount"
+                            required />
                         <span class="input-group-addon">.00</span>
                     </div>
                 </div>
 
                 <div class="space-top-20">Monthly Utilities, HO fees, taxes, insurance &amp; upkeep (Dollar Amount)</div>
                 <div class="space-top-10">
-                    <div class="input-group">
+                    <div class="input-group" ng-class="{ 'has-error' : requestForm.frmUtilityAndFees.$error.required && !requestForm.frmUtilityAndFees.$pristine }">
                         <span class="input-group-addon">$</span>
-                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="500" ng-model="userValues.utilityAndFees" ng-value="userValues.utilityAndFees" />
+                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="500"
+                            id="frmUtilityAndFees"
+                            ng-model="userValues.utilityAndFees"
+                            ng-value="userValues.utilityAndFees"
+                            required />
                         <span class="input-group-addon">.00</span>
                     </div>
                 </div>
@@ -72,13 +84,21 @@
                 <div class="space-top-10">
                     <div class="input-group">
                         <span class="input-group-addon">$</span>
-                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="3000" ng-model="userValues.stagingInvestment" ng-value="userValues.stagingInvestment" />
+                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="3000"
+                            id="frmStagingInvestment"
+                            ng-model="userValues.stagingInvestment"
+                            ng-value="userValues.stagingInvestment"
+                            required />
                         <span class="input-group-addon">.00</span>
                     </div>
                 </div>
 
                 <!-- Calculate Button -->
-                <div class="space-top-40 space-bottom-40"><button type="button" class="btn btn-primary" ng-disabled="commentForm.$invalid">Calculate ROSI</button></div>
+                <div class="space-top-40 space-bottom-40">
+                    <button type="button" class="btn btn-primary"
+                        ng-class="{ 'disabled': requestForm.$invalid }"
+                        ng-disabled="requestForm.$invalid" >Calculate ROSI</button>
+                </div>
             </div><!-- /col -->
         </form>
     </div>
