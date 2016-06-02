@@ -8,22 +8,22 @@
 
             <div class="text-center space-top-40">
                 <div>Cost to Sell Your Home Unstaged</div>
-                <div class="space-top-10"><span id="resultHomeUnstaged" class="label label-primary" style="font-size: 20px;">$10500</span></div>
+                <div class="space-top-10"><span id="resultHomeUnstaged" class="label label-default font-size-20">$ {{ userResults.numCostUnstaged }}</span></div>
             </div>
 
             <div class="text-center space-top-40">
                 <div>Cost to Sell Your Home Staged</div>
-                <div class="space-top-10"><span id="resultHomeStaged" class="label label-primary" style="font-size: 20px;">$4400</span></div>
+                <div class="space-top-10"><span id="resultHomeStaged" class="label label-default font-size-20">$ {{ userResults.numCostStaged }}</span></div>
             </div>
 
             <div class="text-center space-top-40">
                 <div>Savings When You SELL Your Home ASP Staged</div>
-                <div class="space-top-10"><span id="resultSavings" class="label label-success" style="font-size: 20px;">$6100</span></div>
+                <div class="space-top-10"><span id="resultSavings" class="label label-primary font-size-20">$ {{ userResults.numSavingsStaged }}</span></div>
             </div>
 
             <div class="text-center space-top-40">
                 <div>Return on Staging Investment (ROSI<sup>&reg;</sup>)</div>
-                <div class="space-top-10"><span id="resultROSI" class="label label-success" style="font-size: 20px;">203.33%</span></div>
+                <div class="space-top-10"><span id="resultROSI" class="label label-primary font-size-20">{{ userResults.numRosi }}%</span></div>
             </div>
         </div><!-- /col -->
 

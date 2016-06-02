@@ -17,10 +17,10 @@
 
             facrosi.userResults = {
                 // Return on Staging Investment (ROSI)
-                unstagedCost: null,
-                investment: null,
-                savingsASPStaged: null,
-                rosiResult: null
+                numCostUnstaged: null,
+                numCostStaged: null,
+                numSavingsStaged: null,
+                numRosi: null
             }; // userResults
 
             /* --------------------------------------------

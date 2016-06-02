@@ -24,9 +24,37 @@
             $scope.calculateROSI = function() {
                 // Do ROSI calculations here.
 
+                // Redirect user to home if input values are missing
+                // Cost to Sell Your Home Unstaged
+                $scope.userResults.numCostUnstaged = (
+                    parseFloat($scope.userValues.mortgageAmount) +
+                    parseInt($scope.userValues.utilityAndFees)) *
+                    parseFloat($scope.userValues.monthsBeforeNotASPStaged)
+                ; // userResults.unstagedCost
+
+                // Cost to Sell Your Home Staged
+                $scope.userResults.numCostStaged = (
+                    parseFloat($scope.userValues.mortgageAmount) +
+                    parseInt($scope.userValues.utilityAndFees)) *
+                    parseFloat($scope.userValues.monthsBeforeASPStaged) +
+                    parseInt($scope.userValues.stagingInvestment)
+                ; // userResults.investment
+
+                // Savings When You SELL Your Home ASP® Staged
+                $scope.userResults.numSavingsStaged =
+                    $scope.userResults.numCostUnstaged -
+                    $scope.userResults.numCostStaged
+                ; // userResults.savingsASPStaged
+
+                // Return on Staging Investment (ROSI)
+                $scope.userResults.numRosi =
+                    (($scope.userResults.numSavingsStaged /
+                    parseInt($scope.userValues.stagingInvestment)) * 100).toFixed(2)
+                ; // userResults.numRosi
 
                 // View Results
                 $state.go("app.results");
+
             }; // calculateROSI()
         }]) // controller("ctrlROSI")
     ; // angular.module("appROSI")
