@@ -8,13 +8,13 @@ angular.module("appROSI", ["ui.router", "ngResource"])
                 url: "/",
                 views: {
                     "header": {
-                        templateUrl: "assets/views/header.html",
+                        templateUrl: "/assets/views/header.html",
                     }, // header
                     "content": {
-                        templateUrl: "assets/views/home.html",
+                        templateUrl: "/assets/views/home.html",
                     }, // content
                     "footer": {
-                        templateUrl: "assets/views/footer.html",
+                        templateUrl: "/assets/views/footer.html",
                     } // footer
                 } // views
             }) // .state
@@ -22,10 +22,10 @@ angular.module("appROSI", ["ui.router", "ngResource"])
             // Route: Results
             .state("app.results", {
                 url: "results",
-                templateUrl: "assets/views/results.html",
+                templateUrl: "/assets/views/results.html",
                 views: {
                     "content@": {
-                        templateUrl: "assets/views/results.html",
+                        templateUrl: "/assets/views/results.html",
                     } // content
                 } // views
             }) // state
@@ -35,7 +35,7 @@ angular.module("appROSI", ["ui.router", "ngResource"])
                 url: "rosi",
                 views: {
                     "content@": {
-                        templateUrl: "assets/views/rosi.html",
+                        templateUrl: "/assets/views/rosi.html",
                     } // content
                 } // views
             }) // state
@@ -45,7 +45,7 @@ angular.module("appROSI", ["ui.router", "ngResource"])
                 url: "become_asp",
                 views: {
                     "content@": {
-                        templateUrl: "assets/views/become-asp.html",
+                        templateUrl: "/assets/views/become-asp.html",
                     } // content
                 } // views
             }); // state
