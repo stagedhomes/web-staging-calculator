@@ -15,13 +15,14 @@ angular.module("appROSI", ["ui.router", "ngResource"])
                     }, // content
                     "footer": {
                         templateUrl: "assets/views/footer.html",
-                    }
+                    } // footer
                 } // views
             }) // .state
 
             // Route: Results
             .state("app.results", {
                 url: "results",
+                templateUrl: "assets/views/results.html",
                 views: {
                     "content@": {
                         templateUrl: "assets/views/results.html",
