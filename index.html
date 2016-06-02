@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="appROSI">
 
-<head>
+<head ng-controller="ctrlHead">
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,13 +12,13 @@
     <title>Home Staging Calculator</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="https://d2itdnqewolu1g.cloudfront.net/images/the-project/favicon.png">
+    <link rel="shortcut icon" href="{{ commonVariables.cdnUrl }}images/the-project/favicon.png">
 
     <!-- Facebook Open Graph -->
     <meta property="og:title" content="Home Staging Training">
     <meta property="og:site_name" content="StagedHomes.com">
     <meta property="og:url" content="http://www.stagedhomes.com">
-    <meta property="og:image" content="https://d2itdnqewolu1g.cloudfront.net/images/opengraph-stagedhomes.png" />
+    <meta property="og:image" content="{{ commonVariables.cdnUrl }}images/opengraph-stagedhomes.png" />
     <meta property="og:description" content="Training One Person at a Time, Staging one Home at a Time, and Empowering One Family At a Time Through the Magic of ASP Home Staging. We are dedicated to change what worked yesterday for what now excels today, and that which opens the way to tomorrow through the world of ASP Home Staging and Training at StagedHomes.com!">
     <meta property="fb:app_id" content="1597158963931745">
     <meta property="og:type" content="website">

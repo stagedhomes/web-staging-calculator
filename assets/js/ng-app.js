@@ -50,6 +50,6 @@ angular.module("appROSI", ["ui.router", "ngResource"])
                 } // views
             }); // state
 
-        $urlRouterProvider.otherwise("/");
+        // $urlRouterProvider.otherwise("/");
     }) // .config
 ; // angular.module
