@@ -13,13 +13,14 @@
         }]) // controller("ctrlHead")
 
         // Main controller for application.
-        .controller("ctrlROSI", ["$scope", "$state", "commonVariables", "factoryROSI", function($scope, $state, commonVariables, factoryROSI) {
+        .controller("ctrlROSI", ["$scope", "$state", "$localStorage", "commonVariables", "factoryROSI", function($scope, $state, $localStorage, commonVariables, factoryROSI) {
             // Add global variables to $scope.
             $scope.commonVariables = commonVariables;
 
             // Get values from factory.
             $scope.userValues = factoryROSI.getUserValues();
             $scope.userResults = factoryROSI.getUserResults();
+            $scope.historyValues = factoryROSI.getHistoryValues();
 
             $scope.calculateROSI = function() {
                 // Do ROSI calculations here.
@@ -51,6 +52,16 @@
                     (($scope.userResults.numSavingsStaged /
                     parseInt($scope.userValues.stagingInvestment)) * 100).toFixed(2)
                 ; // userResults.numRosi
+
+                // Add to history array.
+                $scope.historyValues.push({
+                    numCostUnstaged: $scope.userResults.numCostUnstaged,
+                    numCostStaged: $scope.userResults.numCostStaged,
+                    numSavingsStaged: $scope.userResults.numSavingsStaged,
+                    numRosi: $scope.userResults.numRosi
+                }); // historyValues.push
+
+                console.log($scope.historyValues);
 
                 // View Results
                 $state.go("app.results");

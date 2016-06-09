@@ -23,6 +23,9 @@
                 numRosi: null
             }; // userResults
 
+            // Variable that holds the contents of history.
+            facrosi.historyValues = [];
+
             /* --------------------------------------------
                 Getters
             -------------------------------------------- */
@@ -35,6 +38,10 @@
             facrosi.getUserResults = function() {
                 return facrosi.userResults;
             }; // getUserResults()
+
+            facrosi.getHistoryValues = function() {
+                return facrosi.historyValues;
+            }; // getHistoryValues
 
             /* --------------------------------------------
                 Setters
