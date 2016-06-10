@@ -1,7 +1,11 @@
 (function() {
     "use strict";
 
-    angular.module("appROSI", ["ui.router", "ngResource"])
+    angular.module("appROSI", [
+        "ui.router",
+        "ngResource",
+        "LocalStorageModule"
+    ]) // angular.module
         .config(function($stateProvider, $urlRouterProvider) {
             $stateProvider
                 // Route: Home

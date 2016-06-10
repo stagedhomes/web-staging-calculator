@@ -13,7 +13,7 @@
         }]) // controller("ctrlHead")
 
         // Main controller for application.
-        .controller("ctrlROSI", ["$scope", "$state", "$localStorage", "commonVariables", "factoryROSI", function($scope, $state, $localStorage, commonVariables, factoryROSI) {
+        .controller("ctrlROSI", ["$scope", "$state", "localStorageService", "commonVariables", "factoryROSI", function($scope, $state, localStorageService, commonVariables, factoryROSI) {
             // Add global variables to $scope.
             $scope.commonVariables = commonVariables;
 
@@ -22,8 +22,13 @@
             $scope.userResults = factoryROSI.getUserResults();
             $scope.historyValues = factoryROSI.getHistoryValues();
 
+            // Get values from localStorage
+            // $scope.historyValues =
+
             $scope.calculateROSI = function() {
-                // Do ROSI calculations here.
+                /* -----------------------------------------------------------------
+                    Do ROSI calculations here.
+                ----------------------------------------------------------------- */
 
                 // Redirect user to home if input values are missing
                 // Cost to Sell Your Home Unstaged
@@ -53,7 +58,9 @@
                     parseInt($scope.userValues.stagingInvestment)) * 100).toFixed(2)
                 ; // userResults.numRosi
 
-                // Add to history array.
+                /* -----------------------------------------------------------------
+                    Add to history array.
+                ----------------------------------------------------------------- */
                 $scope.historyValues.push({
                     numCostUnstaged: $scope.userResults.numCostUnstaged,
                     numCostStaged: $scope.userResults.numCostStaged,
