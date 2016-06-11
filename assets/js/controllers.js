@@ -23,7 +23,13 @@
             $scope.historyValues = factoryROSI.getHistoryValues();
 
             // Get values from localStorage
-            // $scope.historyValues =
+            if(localStorageService.isSupported) {
+                if(localStorageService.get("historyValues") === null) {
+                    $scope.historyValues = [];
+                } else {
+                    $scope.historyValues = localStorageService.get("historyValues");
+                } // inner if
+            } // outer if
 
             $scope.calculateROSI = function() {
                 /* -----------------------------------------------------------------
@@ -68,6 +74,12 @@
                     numRosi: $scope.userResults.numRosi
                 }); // historyValues.push
 
+                // Add to local storage.
+                if(localStorageService.isSupported) {
+                    localStorageService.set("historyValues", $scope.historyValues);
+                }
+
+                // View contents of array via console. Delete when site is published.
                 console.log($scope.historyValues);
 
                 // View Results

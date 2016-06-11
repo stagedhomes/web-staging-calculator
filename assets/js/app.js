@@ -32,6 +32,16 @@
                 }) // .state
 
                 // Route: ROSI
+                .state("app.history", {
+                    url: "history",
+                    views: {
+                        "content@": {
+                            templateUrl: "/assets/views/history.html"
+                        } // content
+                    } // views
+                }) // state
+
+                // Route: ROSI
                 .state("app.rosi", {
                     url: "rosi",
                     views: {
