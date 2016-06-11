@@ -8,11 +8,48 @@
                 Your ROSI<sup>&reg;</sup> calculations will be saved here and accessible if you need to recall
                 to reference a past calculation.  Up to 10 historical information will be kept.
             </div>
+
+            <!-- List all history from LocalStorage. -->
+            <div class="space-top-20">
+
+            </div>
         </div><!-- /col -->
 
         <!-- Last Column -->
         <div class="col-xs-12 col-md-6">
-            <div class="text-center space-top-20" ng-include="'assets/views/partials/banners.html'"></div>
+            <!-- Clear History -->
+            <div class="space-top-40 text-center">
+                <div>Clear all history contents (this can't be undone).</div>
+                <div class="space-top-10">
+                    <button type="button" class="btn btn-danger"
+                        ng-click="clearHistory();" >Clear History</button>
+                </div>
+            </div>
+
+            <!-- Small modal -->
+            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".clear-history-modal-sm">Small modal</button> -->
+
+            <div class="modal fade clear-history-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div>History contents have been cleared!</div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Return Home -->
+            <div class="space-top-40 text-center">
+                <div>Return back to the main page to calculate a new ROSI.</div>
+                <div class="space-top-10">
+                    <button type="button" class="btn btn-primary"
+                        ui-sref="app" >Return Home</button>
+                </div>
+            </div>
         </div><!-- /col -->
     </div><!-- /row -->
 </section>

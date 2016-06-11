@@ -77,15 +77,24 @@
                 // Add to local storage.
                 if(localStorageService.isSupported) {
                     localStorageService.set("historyValues", $scope.historyValues);
-                }
+                } // if
 
                 // View contents of array via console. Delete when site is published.
                 console.log($scope.historyValues);
 
                 // View Results
                 $state.go("app.results");
-
             }; // calculateROSI()
+
+            $scope.clearHistory = function() {
+                if(localStorageService.isSupported) {
+                    $scope.historyValues = [];
+                    localStorageService.set("historyValues", $scope.historyValues);
+
+                    // Displays modal to let user know values are cleared.
+                    $(".clear-history-modal-sm").modal("show");
+                } // if
+            }; // clearHistory
         }]) // controller("ctrlROSI")
     ; // angular.module("appROSI")
 })(); // function()
