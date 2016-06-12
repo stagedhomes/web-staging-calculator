@@ -105,8 +105,18 @@
 
             $scope.clearHistory = function() {
                 if(localStorageService.isSupported) {
+                    // Clear factory.
                     $scope.historyValues = [];
                     localStorageService.set("historyValues", $scope.historyValues);
+
+                    // Reset values from Home.
+                    $scope.userValues = {
+                        monthsBeforeASPStaged: 0.4,
+                        monthsBeforeNotASPStaged: 3.0,
+                        mortgageAmount: null,
+                        utilityAndFees: null,
+                        stagingInvestment: null
+                    }; // userValues
 
                     // Displays modal to let user know values are cleared.
                     $(".clear-history-modal-sm").modal("show");
