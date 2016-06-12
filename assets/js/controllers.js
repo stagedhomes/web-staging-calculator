@@ -67,11 +67,28 @@
                 /* -----------------------------------------------------------------
                     Add to history array.
                 ----------------------------------------------------------------- */
+                // Get current date.
+                var $currentDate = new Date().toISOString().slice(0,10);
+
+                // Add to history array.
                 $scope.historyValues.push({
-                    numCostUnstaged: $scope.userResults.numCostUnstaged,
-                    numCostStaged: $scope.userResults.numCostStaged,
-                    numSavingsStaged: $scope.userResults.numSavingsStaged,
-                    numRosi: $scope.userResults.numRosi
+                    id: $scope.historyValues.length + 1,
+
+                    // User Provided Values
+                    monthsBeforeASPStaged: parseFloat($scope.userValues.monthsBeforeASPStaged),
+                    monthsBeforeNotASPStaged: parseFloat($scope.userValues.monthsBeforeNotASPStaged),
+                    mortgageAmount: parseInt($scope.userValues.mortgageAmount),
+                    utilityAndFees: parseInt($scope.userValues.utilityAndFees),
+                    stagingInvestment: parseInt($scope.userValues.stagingInvestment),
+
+                    // ROSI Results
+                    numCostUnstaged: parseInt($scope.userResults.numCostUnstaged),
+                    numCostStaged: parseInt($scope.userResults.numCostStaged),
+                    numSavingsStaged: parseInt($scope.userResults.numSavingsStaged),
+                    numRosi: parseFloat($scope.userResults.numRosi),
+
+                    // Timestamp
+                    dateSubmitted: $currentDate
                 }); // historyValues.push
 
                 // Add to local storage.

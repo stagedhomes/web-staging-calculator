@@ -10,9 +10,100 @@
             </div>
 
             <!-- List all history from LocalStorage. -->
-            <div class="space-top-20">
+            <div class="space-top-20" ng-repeat="singleHistory in historyValues">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" data-target="#collapse{{ singleHistory.id }}" aria-expanded="true" aria-controls="collapse{{ singleHistory.id }}">
+                                    <span>
+                                        <i class="fa fa-history" aria-hidden="true"></i>
+                                        ROSI: {{ singleHistory.numRosi }}%
+                                    </span>
+                                    <span class="pull-right">
+                                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                                        {{ singleHistory.dateSubmitted }}
+                                    </span>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse{{ singleHistory.id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ singleHistory.id }}">
+                            <div class="panel-body">
+                                <div class="space-bottom-20">
+                                    <table class="table table-bordered">
+                                        <tr class="info">
+                                            <th>Provided by You</th>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span>Months ASP Staged Before Sale</span>
+                                                <span class="pull-right">{{ singleHistory.monthsBeforeASPStaged }}</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span>Months Not ASP Staged Before Sale</span>
+                                                <span class="pull-right">{{ singleHistory.monthsBeforeNotASPStaged }}</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span>Mortgage Amount per Month</span>
+                                                <span class="pull-right">$ {{ singleHistory.mortgageAmount }}</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span>Monthly Utilities</span>
+                                                <span class="pull-right">$ {{ singleHistory.utilityAndFees }}</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span>Staging Investment</span>
+                                                <span class="pull-right">$ {{ singleHistory.stagingInvestment }}</span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
 
-            </div>
+                                <!-- ROSI Results -->
+                                <div>
+                                    <table class="table table-bordered">
+                                        <tr class="success">
+                                            <th>Return on Staging Investment</th>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span>Cost to Sell Your Home Unstaged</span>
+                                                <span class="pull-right">$ {{ singleHistory.numCostUnstaged }}</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span>Cost to Sell Your Home Staged</span>
+                                                <span class="pull-right">$ {{ singleHistory.numCostStaged }}</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span>Savings When You SELL Your Home ASP Staged</span>
+                                                <span class="pull-right">$ {{ singleHistory.numSavingsStaged }}</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span>Return on Staging Investment (ROSI<sup>&reg;</sup>)</span>
+                                                <span class="pull-right">$ {{ singleHistory.numRosi }}</span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /panel -->
+            </div><!-- /panel-group -->
         </div><!-- /col -->
 
         <!-- Last Column -->

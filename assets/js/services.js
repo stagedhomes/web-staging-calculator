@@ -9,7 +9,7 @@
             facrosi.userValues = {
                 // Values from user.
                 monthsBeforeASPStaged: 0.4,
-                monthsBeforeNotASPStaged: 3,
+                monthsBeforeNotASPStaged: 3.0,
                 mortgageAmount: null,
                 utilityAndFees: null,
                 stagingInvestment: null

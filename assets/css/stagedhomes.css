@@ -11,6 +11,8 @@ h2 { font-size: 20px; }
 .navbar-brand { padding: 2px 2px; }
 .main-logo { width: auto; height: 95%; }
 
+.width-50-float-left { width: 50%; float: left; }
+
 .space-top-10 { margin-top: 10px; }
 .space-top-20 { margin-top: 20px; }
 .space-top-40 { margin-top: 40px; }
