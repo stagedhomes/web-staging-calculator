@@ -13,10 +13,10 @@
                     url: "/",
                     views: {
                         "header": {
-                            templateUrl: "/assets/views/header.html",
+                            templateUrl: "./assets/views/header.html",
                         }, // header
                         "content": {
-                            templateUrl: "/assets/views/home.html",
+                            templateUrl: "./assets/views/home.html",
                         } // content
                     } // views
                 }) // .state
@@ -26,7 +26,7 @@
                     url: "results",
                     views: {
                         "content@": {
-                            templateUrl: "/assets/views/results.html"
+                            templateUrl: "./assets/views/results.html"
                         } // content
                     } // views
                 }) // .state
@@ -36,7 +36,7 @@
                     url: "history",
                     views: {
                         "content@": {
-                            templateUrl: "/assets/views/history.html"
+                            templateUrl: "./assets/views/history.html"
                         } // content
                     } // views
                 }) // state
@@ -46,7 +46,7 @@
                     url: "rosi",
                     views: {
                         "content@": {
-                            templateUrl: "/assets/views/rosi.html"
+                            templateUrl: "./assets/views/rosi.html"
                         } // content
                     } // views
                 }) // state
@@ -56,7 +56,7 @@
                     url: "become_asp",
                     views: {
                         "content@": {
-                            templateUrl: "/assets/views/become-asp.html"
+                            templateUrl: "./assets/views/become-asp.html"
                         } // content
                     } // views
                 }); // state
