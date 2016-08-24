@@ -4,6 +4,7 @@
   "description": "The official Home Staging Calculator from StagedHomes.com built for the web.",
   "main": "index.js",
   "dependencies": {
+    "mongoose-double": "0.0.1",
     "normalize.css": "^4.1.1"
   },
   "devDependencies": {},
